@@ -1,0 +1,13 @@
+{
+  "name": "angular-GAN",
+  "description": "GAN test for AngularJS",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.3.15",
+    "jquery": "1.11.x",
+    "bootstrap": "3.1.1",
+    "angular-resource": "1.3.x",
+    "ngstorage":"x",
+    "angular-chart.js":"*"
+  }
+}

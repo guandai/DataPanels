@@ -1,0 +1,14 @@
+<div class="panels" ng-if="widget.checked">
+	<button class="btn btn-primary btn-xs boxbtn" 
+    	ng-click="check(widget.id)">X
+    </button>  
+   
+    <div class="boxtitle-wrap">
+    	<!-- <span class="boxtitle">id: {{widget.id}} |&nbsp;</span> -->
+     	<h4 class="boxtitle">{{widget.name}}</h4>
+     	<!-- <span class="boxtitle">type: {{widget.type}} |&nbsp;&nbsp;</span> -->
+     	<!-- <span class="boxtitle">checked: {{widget.checked}}</span> -->
+    </div>
+
+    <div class="switch-charts" type="{{widget.type}}"  template="{{widget.template}}" ></div>
+</div>

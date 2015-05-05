@@ -1,0 +1,69 @@
+#sidebar {
+  height: 1000px;
+  width: 20%;
+  float: right;
+  text-align: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.panels {
+  position: relative;
+  width: 450px;
+  height: 340px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 10px;
+  background-color: #efefef;
+  text-align: center;
+  float: left;
+}
+.panelshow {
+  width: 78%;
+}
+.boxbtn {
+  float: right;
+}
+.boxtitle-wrap {
+  text-align: center;
+}
+.allpanels {
+  position: relative;
+}
+.share-panel {
+  position: relative;
+  z-index: 0;
+}
+.template-include {
+  position: absolute;
+  z-index: 100;
+  left: 10px;
+  top: 70px;
+  width: 95%;
+}
+.panel-body {
+  font-size: 12px;
+  padding: 0px;
+}
+.chart-template {
+  position: relative;
+  width: 100%;
+  z-index: 90;
+}
+th {
+  text-align: center;
+}
+.tcen {
+  text-align: center;
+}
+.rel {
+  position: relative;
+}
+.pernote {
+  font-size: 10px;
+  width: 100%;
+}
+.updatelastline {
+  font-size: 12px;
+}

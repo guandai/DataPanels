@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="widgetApp">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <!-- Basic-->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+
+        <!-- chart libs -->
+        <script src="../bower_components/Chart.js/Chart.min.js"></script>
+        <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+        <script src="../bower_components/ngStorage/ngStorage.min.js"></script>
+
+        <!-- for this app  -->
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/app.js"></script>
+        <!-- my personal tools -->
+        <script src="js/smt.js"></script>
+    </head>
+    <body>
+        <div class="widgets container"  ng-controller="widgetCtrl">
+            <div id = "page" class="row">
+
+                <!-- left panel for main space -->
+                <div id = "panelshow"  class="panelshow">
+                    <h3>Widgets</h3>
+                    <br>
+                    <!-- detect is localstorage is avaliable  -->
+                    <div ng-if="$storage.widgets" class="allpanels" ng-repeat="widget in $storage.widgets | orderBy:'id' ">
+                        <div class="share-panel" ></div>
+                    </div>
+                    <div ng-if="!$storage.widgets" class="allpanels" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
+                        <div class="share-panel" ></div>
+                    </div>
+                </div>
+                <!-- right side  for check boxes -->
+                <div id="sidebar" class="bg-info col-md- sidebar-nav-fixed">
+                    <h3>Choose Widgets</h3>
+                    <!-- detect is localstorage is avaliable  -->
+                    <div ng-if="$storage.widgets" class="form-controlbootstra" ng-repeat="widget in $storage.widgets | orderBy:'name'  ">
+                        <label>{{widget.name}}: <input type="checkbox" ng-model="widget.checked"></label><br/>
+                    </div>
+                    <div ng-if="!$storage.widgets"  class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
+                        <label>{{widget.name}}: <input type="checkbox" ng-model="widget.checked"></label><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

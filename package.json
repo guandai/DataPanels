@@ -1,0 +1,10 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "GAN",
+  "description": "GAN task for AngularJS",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install"
+  }
+}
