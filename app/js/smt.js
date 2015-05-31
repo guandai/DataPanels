@@ -1,7 +1,4 @@
 
-
-
-
 function trn(){
 	for (var i in arguments){
 		var str=arguments.callee.caller[arguments[i]]
@@ -548,6 +545,15 @@ function uppath(){
 /*
  *  get parent path, return string
  */
+
+smt_toa = function ( obj ) { 
+	var arr=[]
+	for(var i in obj ){
+		arr.push( obj[i] )
+	}
+   return arr;
+}
+
 
 String.prototype.replaceall = function(search, tostr) {
   return this.split(search).join(tostr);

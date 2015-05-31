@@ -1,0 +1,43 @@
+@import "basic";
+@import "panel";
+@import "sharepanel";
+@import "partial";
+//@import "slides";
+body{
+    background-color:$invertSideColor;
+}
+#sidebar {
+	padding: $unitpx;
+	height: auto;
+    width: $sideWidth;
+    @include transitionDef;
+    @extend .alle;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $sideBgColor;
+    color: $invertSideColor;
+
+    div[ng-if="$storage.widgets"]{
+    	width:100%;  	
+    }
+
+    label{
+    	font-weight: 300;
+    }
+}
+ 
+.widgetshow {
+    position: absolute;
+    left: $sideWidth;
+    top:0px;
+    right: 0px;
+    background-color:  $invertSideColor;
+    color: $sideBgColor;
+    padding-left: $unitpx/2 * 2;
+    padding-right: $unitpx * 2;
+     
+}
+
+

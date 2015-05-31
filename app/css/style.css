@@ -1,69 +1,255 @@
-#sidebar {
-  height: 1000px;
-  width: 20%;
-  float: right;
-  text-align: center;
-  position: fixed;
-  right: 0;
-  top: 0;
-}
-.panels {
-  position: relative;
-  width: 450px;
-  height: 340px;
-  border: 2px solid gray;
-  border-radius: 5px;
-  margin: 2px;
-  padding: 10px;
-  background-color: #efefef;
-  text-align: center;
-  float: left;
-}
-.panelshow {
-  width: 78%;
-}
-.boxbtn {
-  float: right;
-}
-.boxtitle-wrap {
-  text-align: center;
-}
-.allpanels {
-  position: relative;
-}
-.share-panel {
-  position: relative;
-  z-index: 0;
-}
-.template-include {
-  position: absolute;
-  z-index: 100;
-  left: 10px;
-  top: 70px;
-  width: 95%;
-}
-.panel-body {
-  font-size: 12px;
-  padding: 0px;
-}
-.chart-template {
-  position: relative;
-  width: 100%;
-  z-index: 90;
-}
-th {
-  text-align: center;
-}
-.tcen {
-  text-align: center;
-}
+.alc, .share-panel-wrap .share-panel {
+  text-align: center; }
+
+.alle, .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat, #sidebar {
+  text-align: left; }
+
 .rel {
+  position: relative; }
+
+hr {
+  border-top: 1px solid #555; }
+
+.rel {
+  position: relative; }
+
+.transitionDef {
+  -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+
+.share-panel-wrap {
+  display: inline-block;
+  float: left; }
+  .share-panel-wrap .share-panel {
+    position: relative;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 10px;
+    background-color: #efefef;
+    -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+    -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+    -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+    -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+    transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+    .share-panel-wrap .share-panel .boxbtn {
+      float: right;
+      font-size: 10px;
+      line-height: 12px;
+      margin-right: -5px;
+      margin-top: -5px; }
+    .share-panel-wrap .share-panel .boxtitle-wrap {
+      text-align: right; }
+      .share-panel-wrap .share-panel .boxtitle-wrap .boxtitle {
+        font-size: 12px;
+        margin-right: 20px;
+        margin-top: -2.5px; }
+      .share-panel-wrap .share-panel .boxtitle-wrap h5 {
+        margin: 0; }
+    .share-panel-wrap .share-panel .template-include {
+      position: relative;
+      z-index: 100; }
+  .share-panel-wrap .share-panel.ng-enter {
+    transition: 0.5s linear all;
+    opacity: 0; }
+  .share-panel-wrap .share-panel.ng-enter.ng-enter-active {
+    opacity: 1; }
+  .share-panel-wrap .share-panel.ng-leave {
+    transition: 0.5s linear all;
+    opacity: 1; }
+  .share-panel-wrap .share-panel.ng-leave.ng-leave-active {
+    opacity: 0; }
+
+.basic-template, .vertical-template, .horizontal-template {
   position: relative;
-}
-.pernote {
-  font-size: 10px;
-  width: 100%;
-}
-.updatelastline {
-  font-size: 12px;
-}
+  -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+  .basic-template .panel-body, .vertical-template .panel-body, .horizontal-template .panel-body {
+    font-size: 12px;
+    padding: 0px; }
+    .basic-template .panel-body .review-list-title .averageText, .vertical-template .panel-body .review-list-title .averageText, .horizontal-template .panel-body .review-list-title .averageText {
+      text-transform: uppercase;
+      vertical-align: middle;
+      font-size: 25px;
+      font-weight: 700; }
+    .basic-template .panel-body .review-list-title hr, .vertical-template .panel-body .review-list-title hr, .horizontal-template .panel-body .review-list-title hr {
+      margin-top: 4px;
+      margin-bottom: 10px; }
+    .basic-template .panel-body .review-list-title .starRating-lg, .vertical-template .panel-body .review-list-title .starRating-lg, .horizontal-template .panel-body .review-list-title .starRating-lg {
+      height: 30px; }
+    .basic-template .panel-body .review-list-title .review-list-title-subline, .vertical-template .panel-body .review-list-title .review-list-title-subline, .horizontal-template .panel-body .review-list-title .review-list-title-subline {
+      line-height: 40px; }
+      .basic-template .panel-body .review-list-title .review-list-title-subline .totalReview, .vertical-template .panel-body .review-list-title .review-list-title-subline .totalReview, .horizontal-template .panel-body .review-list-title .review-list-title-subline .totalReview {
+        vertical-align: middle;
+        font-size: 15px; }
+    .basic-template .panel-body .review-list-wrap, .vertical-template .panel-body .review-list-wrap, .horizontal-template .panel-body .review-list-wrap {
+      overflow: hidden;
+      position: relative; }
+      .basic-template .panel-body .review-list-wrap .review-list, .vertical-template .panel-body .review-list-wrap .review-list, .horizontal-template .panel-body .review-list-wrap .review-list {
+        position: relative;
+        top: 0; }
+        .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat {
+          -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+          -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+          -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+          -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+          box-shadow: 1px 1px 5px 1px rgba(70, 70, 70, 0.5);
+          overflow: hidden;
+          margin: 5px;
+          margin-bottom: 15px;
+          border: 1px solid #555;
+          border-radius: 4px;
+          padding: 10px;
+          background-color: #F5F2ED;
+          line-height: 25px; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-1, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-1, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-1 {
+            color: #db5859; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-2, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-2, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-2 {
+            color: #ca5a42; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-3, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-3, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-3 {
+            color: #a47a3f; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-4, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-4, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-4 {
+            color: #6a9b40; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-5, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-5, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .starcolor-5 {
+            color: #2cb73f; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-horizontal, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-horizontal, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-horizontal {
+            max-width: 260px;
+            -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+            transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-horizontal, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-horizontal, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-horizontal {
+            max-width: 390px;
+            -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+            transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-vertical, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-vertical, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showless-vertical {
+            max-height: 140px;
+            -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+            transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-vertical, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-vertical, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat.showmore-vertical {
+            max-height: 2140px;
+            -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+            -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+            transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewTitle, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewTitle, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewTitle {
+            font-size: 16px;
+            font-style: italic; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .rate-line, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .rate-line, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .rate-line {
+            float: right;
+            color: #a8a9ab; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .firstName, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .firstName, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .firstName {
+            font-size: 16px;
+            font-weight: 700;
+            float: left;
+            color: #353432; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat img.starRating-sm, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat img.starRating-sm, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat img.starRating-sm {
+            height: 12px; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewBody, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewBody, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewBody {
+            font-size: 14px; }
+        .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore {
+          height: 0px; }
+          .basic-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore .readmore, .vertical-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore .readmore, .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore .readmore {
+            position: relative;
+            bottom: 25px; }
+  .basic-template .uparrow, .vertical-template .uparrow, .horizontal-template .uparrow, .basic-template .downarrow, .vertical-template .downarrow, .horizontal-template .downarrow, .basic-template .leftarrow, .vertical-template .leftarrow, .horizontal-template .leftarrow, .basic-template .rightarrow, .vertical-template .rightarrow, .horizontal-template .rightarrow {
+    position: relative;
+    top: 4px;
+    font-size: 25px;
+    vertical-align: middle;
+    line-height: 30px; }
+    .basic-template .uparrow:hover, .vertical-template .uparrow:hover, .horizontal-template .uparrow:hover, .basic-template .downarrow:hover, .vertical-template .downarrow:hover, .horizontal-template .downarrow:hover, .basic-template .leftarrow:hover, .vertical-template .leftarrow:hover, .horizontal-template .leftarrow:hover, .basic-template .rightarrow:hover, .vertical-template .rightarrow:hover, .horizontal-template .rightarrow:hover {
+      text-shadow: 0px 0px 7px #ebbe1f; }
+
+.vertical-template {
+  width: 350px; }
+  .vertical-template .panel-body .review-list-wrap {
+    height: 240px; }
+    .vertical-template .panel-body .review-list-wrap .review-list-repeat {
+      min-height: 140px;
+      max-height: 140px; }
+
+.horizontal-template {
+  width: 600px;
+  background: #444;
+  color: white; }
+  .horizontal-template .panel-body .review-list-wrap {
+    height: 240px;
+    overflow: hidden; }
+    .horizontal-template .panel-body .review-list-wrap .review-list {
+      width: 5000px;
+      left: 0; }
+      .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat {
+        background-color: #0a0d12;
+        min-width: 260px;
+        max-width: 260px;
+        height: 230px;
+        float: left; }
+        .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .firstName {
+          color: #cacbcd; }
+        .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewBody-wrap {
+          position: relative;
+          overflow: hidden;
+          height: 130px;
+          width: 100%; }
+          .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .review-list-repeat .reviewBody-wrap .reviewBody {
+            position: relative;
+            top: 0; }
+      .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore {
+        display: flex; }
+        .horizontal-template .panel-body .review-list-wrap .review-list .review-list-repeat-wrap .button-wrap-readmore .readmore {
+          bottom: initial;
+          right: 47px;
+          top: 7px;
+          height: 20px;
+          width: 40px; }
+
+body {
+  background-color: #cacbcd; }
+
+#sidebar {
+  padding: 10px;
+  height: auto;
+  width: 180px;
+  -webkit-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -moz-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -ms-transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  -o-transition: all 500ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: 500ms, cubic-bezier(0.25, 0.25, 0.75, 0.75), all;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #353432;
+  color: #cacbcd; }
+  #sidebar div[ng-if="$storage.widgets"] {
+    width: 100%; }
+  #sidebar label {
+    font-weight: 300; }
+
+.widgetshow {
+  position: absolute;
+  left: 180px;
+  top: 0px;
+  right: 0px;
+  background-color: #cacbcd;
+  color: #353432;
+  padding-left: 10px;
+  padding-right: 20px; }
+
+/*# sourceMappingURL=style.css.map */

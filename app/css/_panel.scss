@@ -1,0 +1,107 @@
+// @import "basic";
+
+@mixin panelBody() {
+    .panel-body {
+        font-size: $unitSmFont;
+        padding: 0px;
+        // margin-top: - $unitpx * 4;
+        .review-list-title {
+            .averageText {
+                text-transform: uppercase;
+                vertical-align: middle;
+                font-size: $unitpx * 2.5 ;
+                font-weight: 700;
+            }
+            hr {
+                margin-top: $unitpx-sm;
+                margin-bottom: $unitpx;
+            }
+            .starRating-lg {
+                height: $unitpx * 3;
+            }
+            .review-list-title-subline {
+                line-height: $unitpx * 4;
+                .totalReview {
+                    vertical-align: middle;
+                    font-size: $unitpx * 1.5;
+                }
+            }
+        }
+        .review-list-wrap {
+            overflow: hidden;
+            //height: $panelH - 160px;
+            position: relative;
+            .review-list {
+                position: relative;
+                top: 0;
+                .review-list-repeat-wrap {
+                    .review-list-repeat {
+                        @extend .alle;
+                        @include transitionDef;
+                        box-shadow: $unixshadow;
+
+                        overflow: hidden;
+                        margin: $unitpx / 2;
+                        margin-bottom: $unitpx*1.5;
+                        border: $unitline;
+                        border-radius: $unitpx-sm;
+                        padding: $unitpx;
+                        background-color: $warmBgColor;
+                        line-height: $unitpx * 2.5;
+                        @include allcolor;
+
+                        &.showless-horizontal {
+                            max-width: $reviewwidth;
+                            @include transitionDef;
+                        }
+                        &.showmore-horizontal {
+                            //max-height: initial;
+                            max-width: $reviewwidth * 1.5;
+                            @include transitionDef;
+                        }
+
+
+                        &.showless-vertical {
+                            max-height: $reviewheight;
+                            @include transitionDef;
+                        }
+                        &.showmore-vertical {
+                            //max-height: initial;
+                            max-height: $reviewheight + 2000px;
+                            @include transitionDef;
+                        }
+
+
+                        .reviewTitle {
+                            font-size: $unitSmFont + $unitpx-sm;
+                            font-style: italic;
+                        }
+                        .rate-line {
+                            float: right;
+                            color: $lightcolor;
+                        }
+                        .firstName {
+                            font-size: $unitSmFont + $unitpx-sm;
+                            font-weight: $heavy;
+                            float: left;
+                            color: $sideBgColor;
+                        }
+                        img.starRating-sm {
+                            height: $unitpx + 2px;
+                        }
+                        .reviewBody {
+                            font-size: 14px;
+                        }
+                    }
+                    .button-wrap-readmore {
+                        height: 0px;
+                        .readmore {
+                            position: relative;
+                            bottom: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

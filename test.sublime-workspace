@@ -1,0 +1,514 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"t",
+				"t"
+			],
+			[
+				"tiem",
+				"timelevel"
+			],
+			[
+				"comm",
+				"CommentsController"
+			],
+			[
+				"new",
+				"new_comment"
+			],
+			[
+				"br",
+				"br"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"forma",
+				"Format Code"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"paackag",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 200.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/js/directives.js",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/js/services.js",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/js/controllers.js",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/index.html",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/partials/chart-table.html",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/bower.json",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/app/js/app.js",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/GAN/package.json",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/test/fixtures/comments.yml",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/config/routes.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/spec/controllers/comments_controller_spec.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/controllers/users_controller.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/spec/views/users/index.html.erb_spec.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/views/users/index.html.erb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/views/users/edit.html.erb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/assets/stylesheets/application.css.scss",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/controllers/friendships_controller.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/controllers/application_controller.rb",
+		"/Users/zhengdai/Dropbox (Personal)/Tempwork/blog/app/controllers/comments_controller.rb",
+		"/C/Users/guand_000/AppData/Local/Temp/Rar$DIa0.659/README.md",
+		"/D/Dropbox/Tempwork/blog/app/assets/stylesheets/application.css",
+		"/D/Dropbox/greensoft/note/st3/Data/Packages/User/less2css.sublime-settings",
+		"/D/Dropbox/Tempwork/blog/app/assets/stylesheets/application.css.less",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/therubyracer-0.11.0beta1-x86-mingw32/lib/v8/init.so",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/less-2.4.0/lib/less.rb",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/less-2.4.0/less.gemspec",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/less-2.4.0/README.md",
+		"/D/Dropbox/Tempwork/blog/app/assets/stylesheets/bootstrap.min.css",
+		"/D/Dropbox/Tempwork/blog/app/assets/stylesheets/angular-chart.css.map",
+		"/D/New Text Document.txt",
+		"/D/Dropbox/Tempwork/mbapp/Gemfile",
+		"/C/Users/guand_000/.gem/ruby/extensions/x86_64-cygwin/json-1.8.2/gem_make.out",
+		"/C/Users/guand_000/.bash_profile",
+		"/D/Dropbox/Tempwork/blog/Gemfile",
+		"/D/Dropbox/Tempwork/aaa.less",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/libv8-3.16.14.8.rc1/ext/libv8/builder.rb",
+		"/D/Dropbox/greensoft/note/st3/sn.txt",
+		"/D/Downloads/sn rubymine.txt",
+		"/D/Dropbox/RubymineProjects/rails/config.ru",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/libv8-3.16.14.8.rc1/README.md",
+		"//",
+		"/C/Windows/System32/error.log",
+		"/D/Dropbox/Tempwork/mbapp/app/models/user.rb",
+		"/D/Dropbox/Tempwork/mbapp/app/models/micropost.rb",
+		"/D/Dropbox/Tempwork/mbapp/config/routes.rb",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/extensions/x86-mingw32/2.1.0/therubyracer-0.12.2/gem_make.out",
+		"/C/apps/Ruby2.1.0/lib/ruby/2.1.0/forwardable.rb",
+		"/C/apps/DevKit/msys.bat",
+		"/C/apps/cygwin64/brew.rb",
+		"/D/Dropbox/Desktop/msys.bat mintty.lnk",
+		"/C/apps/DevKit/home/guand_000/.bash_profile",
+		"/C/apps/DevKit/home/guand_000/.inputrc",
+		"/C/apps/DevKit/dk.rb",
+		"/C/apps/DevKit/update_rubygems",
+		"/D/Dropbox/Tempwork/blog/config/initializers/quiet_assets.rb",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3-x86-mingw32/lib/rubyeventmachine.rb",
+		"/C/apps/cygwin64/etc/profile",
+		"/C/apps/cygwin64/etc/nsswitch.conf",
+		"/C/apps/cygwin64/bin/Cygwin.bat",
+		"/C/apps/cygwin64/home/guand_000/.profile",
+		"/C/apps/cygwin64/home/guand_000/.bash_profile",
+		"/C/apps/cygwin64/tmp/uscreens/S-guand_000/9148.cons0.ACER",
+		"/C/Users/guand_000/.rvm/rubies/current",
+		"/C/apps/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3-x86-mingw32/ext/project.h",
+		"/C/Users/guand_000/.rvm/log/1430640320_ruby-2.2.2/install.log",
+		"/C/Users/guand_000/.rvm/src/ruby-2.2.2/ext/-test-/printf/printf.c",
+		"/C/apps/cygwin64/usr/include/stdlib.h",
+		"/D/Dropbox/Tempwork/learn/t.rb",
+		"/C/Users/guand_000/.rvm/log/1430610204_ruby-2.2.2-mingw32/make.log",
+		"/C/Users/guand_000/.rvm/log/1430614849_ruby-2.2.2/package_install_sqlite3_autoconf_automake_bison_m4_mingw64-i686-gcc_mingw64-x86_64-gcc_cygwin32-readline.log",
+		"/C/apps/cygwin64/usr/include/stdio.h",
+		"/C/apps/cygwin64/usr/src/debug/cygwin-2.0.1-1/newlib/libc/stdio/printf.c",
+		"/D/Dropbox/greensoft/note/st3/Data/Packages/Less2Css/less2css.sublime-settings",
+		"/D/Dropbox/Tempwork/Less/less.less",
+		"/D/Dropbox/Tempwork/httpstest.js",
+		"/C/Users/guand_000/.rvm/log/1430610204_ruby-2.2.2-mingw32/postconfigure.log",
+		"/C/apps/cygwin64/repositories/developwithpassion/devtools/osx_or_cygwin_finish",
+		"/C/apps/cygwin64/repositories/developwithpassion/devtools/automation/rvm/rvm_install_some_rubies",
+		"/C/apps/cygwin64/repositories/developwithpassion/devtools/osx_or_cygwin_kick_off",
+		"/C/apps/cygwin64/repositories/developwithpassion/devtools/automation/rvm/rvm_install",
+		"/C/Users/guand_000/repositories/developwithpassion/devtools/osx_or_cygwin_kick_off",
+		"/C/Users/guand_000/repositories/developwithpassion/devtools/automation/rvm/rvm_install_some_rubies",
+		"/C/Users/guand_000/repositories/developwithpassion/devtools/automation/rvm/rvm_install",
+		"/D/Dropbox/Tempwork/devtools/osx_or_cygwin_kick_off",
+		"/D/Dropbox/Tempwork/devtools/automation/rvm/rvm_install",
+		"/C/apps/cygwin64/bin/[.exe",
+		"/C/apps/cygwin64/home/guand_000/.bash_history",
+		"/C/apps/cygwin64/home/guand_000/.bashrc",
+		"/C/apps/cygwin64/home/guand_000/.inputrc",
+		"/C/apps/cygwin64/etc/skel/.bash_profile",
+		"/D/Dropbox/Tempwork/angular/test scope.html",
+		"/D/Dropbox/TempWork/angular/test",
+		"/D/Dropbox/TempWork/angular/app.js",
+		"/D/Dropbox/TempWork/angular/run.html",
+		"/D/Dropbox/TempWork/angular/test scope(ACER--twindai--2015-04-25-13,25,50).html",
+		"/D/Dropbox/TempWork/angular/scope.html",
+		"/D/Dropbox/Works/Tempwork/.git/config",
+		"/D/Dropbox/MyShare/angular/test.html",
+		"/D/Dropbox/Works/Workspace'aptana/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml",
+		"/G/Language/GRE/PREPV/纠正错误.txt",
+		"/D/Downloads/iTools苹果官网_苹果资讯_苹果软件_苹果游戏免费下载.html",
+		"/C/Users/guand_000/AppData/Local/Temp/Rar$DIb0.246/Bank.txt",
+		"/D/Dropbox/SendTo/.dropbox.attr",
+		"/D/Dropbox/Book/.dropbox",
+		"/D/software/PDF/PDFX/sn.txt",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/guand_000/AppData/Local/Temp/Rar$DIa0.567/README.txt",
+		"/D/Dropbox/Works/android/MyApplication/local.properties",
+		"/D/Dropbox/Works/android/MyApplication/gradlew.bat",
+		"/D/Dropbox/Works/android/MyApplication/myapplication/.gitignore",
+		"/D/Dropbox/Works/android/MyApplication/myapplication/src/main/AndroidManifest.xml",
+		"/D/Dropbox/Works/android/MyApplication/MyApplication.iml",
+		"/D/Dropbox/Works/android/MyApplication/settings.gradle",
+		"/C/Users/guand_000/AppData/Roaming/Appcelerator/Aptana Studio/artifacts.xml",
+		"/C/apps/Android/.AndroidStudio/config/options/ide.general.xml",
+		"/C/apps/Android/.android/androidwin.cfg",
+		"/C/apps/Android/.android/repositories.cfg",
+		"/C/apps/Android/.android/sites-settings.cfg",
+		"/C/apps/Android/.android/devices.xml",
+		"/D/Dropbox/MyShare/test.rb",
+		"/D/Dropbox/.android/androidtool.cfg",
+		"/D/Dropbox/.android/androidwin.cfg",
+		"/D/Dropbox/.android/ddms.cfg",
+		"/D/Dropbox/.android/sites-settings.cfg",
+		"/D/software/Webhost/apache/freekey.txt",
+		"/C/Program Files/Android/Android Studio/build.txt",
+		"/C/Users/guand_000/AppData/Roaming/JetBrains/PermanentUserId",
+		"/C/Users/guand_000/.android/studio/installer/firstrun.data"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"name",
+			"timelevel",
+			"data",
+			"widgetServices",
+			"ta",
+			"response",
+			"widgetScope",
+			"tr",
+			"exp",
+			"ng-view",
+			"show",
+			"attributes",
+			"valid_attributes",
+			"password_digest",
+			"comment",
+			"invalid_attributes",
+			"980191543",
+			"inva",
+			"comment",
+			"Æcomment",
+			"require",
+			"per",
+			"Comment",
+			"comment",
+			"comment = Comment.create! valid_attributes",
+			"comment",
+			"valid_session",
+			"render",
+			"index",
+			"new_comment",
+			"@user",
+			"p ",
+			"p",
+			"CommentsControllerTest",
+			"user",
+			"comments_controller",
+			"comments_controller.rb",
+			"comments_controller",
+			"comments_controlle",
+			"comments_controller.rb",
+			"update",
+			"redi",
+			"replaceall",
+			"ruby",
+			"rubyrac",
+			"less-rail",
+			" less-rail",
+			"less",
+			"execjs",
+			"=====",
+			"error",
+			"dev",
+			"null",
+			"error.log",
+			"null",
+			"python_version",
+			"initialize",
+			"git",
+			"min",
+			"ps",
+			"cmd",
+			"--",
+			"-- p",
+			"-p",
+			"mintty",
+			"mitty",
+			"echo",
+			"bash",
+			"mitt",
+			"show",
+			"-f",
+			"bash",
+			"#  ",
+			"utoa",
+			"ruby",
+			"; ",
+			"rails",
+			"\\n",
+			"andr",
+			"Say",
+			"user",
+			"myControlleratAt",
+			"})\n",
+			"7643",
+			"7543",
+			"getUserInfo",
+			"     \n",
+			"圳网络警察报警平台深圳网络警",
+			"\n深圳网络警察报警平台深圳网络警",
+			"chain",
+			"log",
+			"D:\\Dropbox\\",
+			"D:\\Dropbox\\AppData\\Local\\Android\\Sdk",
+			"drop",
+			"search\\data",
+			"search",
+			"Win32API",
+			"require 'dl'",
+			" require 'dl'",
+			"RUBY_VERSIO",
+			"if RUBY_VERSIO",
+			"if RUBY_VERSION < '1.9.1'"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			";",
+			"",
+			" ",
+			"Value"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "GAN.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"comment",
+				"~/Dropbox (Personal)/Tempwork/blog/app/controllers/comments_controller.rb"
+			],
+			[
+				"",
+				"test/functional/users_controller_test.rb"
+			],
+			[
+				"index.html.erb_spec.rb",
+				"spec/views/users/index.html.erb_spec.rb"
+			],
+			[
+				"edit.html.erb",
+				"app/views/users/edit.html.erb"
+			],
+			[
+				"user_contr",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"index.html.erb",
+				"app/views/users/index.html.erb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"comments_controller.rb",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"user",
+				"test/functional/users_controller_test.rb"
+			],
+			[
+				"user_con",
+				"test/functional/users_controller_test.rb"
+			],
+			[
+				"comments_controller_test.rb",
+				"test/functional/comments_controller_test.rb"
+			],
+			[
+				"comments_controller",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"friendship",
+				"app/controllers/friendships_controller.rb"
+			],
+			[
+				"users_controller_test.rb",
+				"test/functional/users_controller_test.rb"
+			],
+			[
+				"sessions_controller_test.rb",
+				"test/functional/sessions_controller_test.rb"
+			],
+			[
+				"application",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"application.css",
+				"app/assets/stylesheets/application.css.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 175.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

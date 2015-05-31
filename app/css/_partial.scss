@@ -1,0 +1,83 @@
+
+.basic-template {
+    position: relative;
+    @include transitionDef;
+    @include panelBody;
+    .uparrow, .downarrow, .leftarrow, .rightarrow {
+        position: relative;
+        top: $unitpx-sm;
+        font-size: $unitpx * 2.5;
+        vertical-align: middle;
+        line-height: $unitpx * 3;
+        &:hover {
+            // font-size: $unitpx * 2.5;
+            text-shadow: $textshadow
+        }
+    }
+}
+
+.vertical-template {
+    width: $vertTplW;
+    @extend .basic-template;
+    .panel-body {
+        .review-list-wrap {
+            height: $vertTplH - $reviewListDiff;
+            .review-list-repeat {
+                min-height: $reviewheight;
+                max-height: $reviewheight;
+            }
+        }
+    }
+}
+
+
+.horizontal-template {
+    width: $horiTplW;
+    @extend .basic-template;
+      background: #444;
+      color: white;
+
+    .panel-body {
+        .review-list-wrap {
+            height: $horiTplH -$reviewListDiff;
+            overflow: hidden;
+            .review-list {
+                width: 5000px;
+                left: 0;
+                .review-list-repeat-wrap {
+                    .review-list-repeat {
+                        background-color: invert($warmBgColor);
+                        min-width: $reviewwidth;
+                        max-width: $reviewwidth;
+                        height: $horiTplH - $reviewListDiff - 10px;
+                        float: left;
+                        .firstName {
+                                color: invert($sideBgColor);
+                            }
+                        .reviewBody-wrap{
+                            position: relative;
+                            overflow: hidden;
+                            height: $horiTplH - 270px;
+                            width: 100%;
+
+                            .reviewBody{
+                             position: relative; 
+                             top: 0;  
+                            }
+                        }
+                    }
+                    .button-wrap-readmore {
+                        display: flex;
+                        .readmore {
+                            bottom: initial;
+                            right: $unitpx * 4.7;
+                            top: $unitpx/2 + 2px;
+                            height: $unitpx * 2;
+                            width: $unitpx * 4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

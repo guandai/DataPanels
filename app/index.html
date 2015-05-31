@@ -1,55 +1,61 @@
 ﻿<!DOCTYPE html>
 <html ng-app="widgetApp">
     <head>
+    <meta http-equiv="refresh" content="5000" >
         <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+         <!-- my personal tools -->
+        <script src="js/smt.js"></script>
+
         <!-- Basic-->
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../bower_components/angular/angular.min.js"></script>
-        <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-
-        <!-- chart libs -->
-        <script src="../bower_components/Chart.js/Chart.min.js"></script>
-        <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
         <script src="../bower_components/ngStorage/ngStorage.min.js"></script>
+        <script src="../bower_components/angular-mousewheel/mousewheel.js"></script>
+        <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+        <script src="../bower_components/hamsterjs/hamster.js"></script>
 
         <!-- for this app  -->
         <script src="js/controllers.js"></script>
         <script src="js/services.js"></script>
         <script src="js/directives.js"></script>
         <script src="js/filters.js"></script>
+        <script src="js/animations.js"></script>
         <script src="js/app.js"></script>
-        <!-- my personal tools -->
-        <script src="js/smt.js"></script>
+       
     </head>
     <body>
         <div class="widgets container"  ng-controller="widgetCtrl">
             <div id = "page" class="row">
 
-                <!-- left panel for main space -->
-                <div id = "panelshow"  class="panelshow">
-                    <h3>Widgets</h3>
-                    <br>
-                    <!-- detect is localstorage is avaliable  -->
-                    <div ng-if="$storage.widgets" class="allpanels" ng-repeat="widget in $storage.widgets | orderBy:'id' ">
-                        <div class="share-panel" ></div>
-                    </div>
-                    <div ng-if="!$storage.widgets" class="allpanels" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
-                        <div class="share-panel" ></div>
-                    </div>
-                </div>
-                <!-- right side  for check boxes -->
+             <!-- side  for check boxes -->
                 <div id="sidebar" class="bg-info col-md- sidebar-nav-fixed">
-                    <h3>Choose Widgets</h3>
+                    <h4>SWITCH <br>WIDGETS</h4>
+                    <hr>
                     <!-- detect is localstorage is avaliable  -->
                     <div ng-if="$storage.widgets" class="form-controlbootstra" ng-repeat="widget in $storage.widgets | orderBy:'name'  ">
-                        <label>{{widget.name}}: <input type="checkbox" ng-model="widget.checked"></label><br/>
+                        <label>{{widget.name}}&nbsp;&nbsp; <input type="checkbox" ng-model="widget.checked"></label><hr>
                     </div>
                     <div ng-if="!$storage.widgets"  class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
-                        <label>{{widget.name}}: <input type="checkbox" ng-model="widget.checked"></label><br/>
+                        <label>{{widget.name}}&nbsp;&nbsp; <input type="checkbox" ng-model="widget.checked"></label><hr/>
                     </div>
                 </div>
+
+                <!-- left panel for main space -->
+                <div id = "widgetshow"  class="widgetshow">
+                    <h2>Widgets</h2>
+                    <br>
+                    <!-- detect is localstorage is avaliable  -->
+                    <div ng-if="$storage.widgets" class="allWidgets" ng-repeat="widget in $storage.widgets | orderBy:'id' ">
+                        <div class="share-panel-wrap" ></div>
+                    </div>
+                    <div ng-if="!$storage.widgets" class="allWidgets" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
+                        <div class="share-panel-wrap" ></div>
+                    </div>
+                </div>
+               
             </div>
         </div>
     </body>

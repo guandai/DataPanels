@@ -1,34 +1,18 @@
 {       
   "1":{
       "id": 1, 
-      "name": "Table Panel", 
-      "type": "table",
+      "name": "Horizontal Panel", 
+      "type": "Horizontal",
       "checked": true,
-      "template" : "partials/chart-table.html",
+      "template" : "partials/horizontal.html",
       "objtype":"widget"
   },
   "2":{
       "id": 2, 
-      "name": "Bar Panel", 
-      "type": "bar",
+      "name": "Vertical Panel", 
+      "type": "Vertical",
       "checked": true,
-      "template" : "partials/chart-monthbar.html",
+      "template" : "partials/vertical.html",
       "objtype":"widget"
-  },
-  "3":{
-        "id": 3, 
-       "name": "Year Panel", 
-       "type": "bar",
-       "checked" : true,
-       "template" : "partials/chart-yearbar.html",
-       "objtype":"widget"
-  },
-  "4":{
-       "id": 4, 
-       "name": "Last 15 Days Panel", 
-       "type": "line",
-       "checked": true,
-       "template" : "partials/chart-dayline.html",
-       "objtype":"widget"
   }
 }

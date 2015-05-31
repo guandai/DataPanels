@@ -1,0 +1,56 @@
+// @import "basic";
+.share-panel-wrap {
+     display: inline-block;
+     float: left;
+    .share-panel {
+        position: relative;
+        //  width: $panelW;
+        //   height: $panelH;
+        border: 2px solid gray;
+        border-radius: 5px;
+        margin: 2px;
+        padding: 10px;
+        background-color: #efefef;
+        @include transitionDef;
+        @extend .alc;
+        .boxbtn {
+            float: right;
+            font-size: $unitpx;
+            line-height: $unitpx + 2px;
+            margin-right: -$unitpx/2;
+            margin-top: -$unitpx/2;
+        }
+        .boxtitle-wrap {
+            text-align: right;
+            .boxtitle {
+                font-size: 12px;
+                margin-right: $unitpx*2;
+                margin-top: -$unitpx/4;
+            }
+            h5 {
+                margin: 0;
+            }
+        }
+        .template-include {
+            position: relative;
+            z-index: 100;
+            // left: $unitpx;
+            // top: 70px;
+            //width: 95%;
+        }
+    }
+    .share-panel.ng-enter {
+        transition: 0.5s linear all;
+        opacity: 0
+    }
+    .share-panel.ng-enter.ng-enter-active {
+        opacity: 1
+    }
+    .share-panel.ng-leave {
+        transition: 0.5s linear all;
+        opacity: 1;
+    }
+    .share-panel.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+}

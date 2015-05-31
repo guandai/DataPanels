@@ -1,0 +1,84 @@
+$sideBgColor:  #353432;
+$warmBgColor:  #F5F2ED;
+$shadowcolor:  rgba(235, 190, 31, 1);
+$textshadow:  0px 0px 7px $shadowcolor;
+$lineColor:  #555;
+$sideWidth : 180px;
+$unitPadding: 10px;
+$unitpx: 10px;
+$unitSmFont: 12px;
+$unitline: 1px solid $lineColor;
+$invertSideColor:  invert($sideBgColor);
+$lightcolor: $invertSideColor - #222;
+$smbtnW: 22px;
+//$panelW: initial;
+//$panelH:600px;
+$heavy: 700;
+$unitpx-sm : 4px;
+$startlist:  1,2,3,4,5;
+$redcolor: #E5152A;
+$slideup: "slideup";
+$slidedown: "slidedown";
+$slideleft: "slideleft";
+$slideright: "lideright";
+$unixshadow:  1px 1px 5px 1px rgba(70,70,70,0.5);
+
+$vertTplH: 400px;
+$vertTplW: 350px;
+
+$reviewheight: 140px;
+$reviewListDiff: 160px;
+$horiTplH: 400px;
+$horiTplW: 600px;
+$reviewwidth: 260px;
+
+.alc{
+  text-align: center;
+}
+
+.alle{
+  text-align: left;
+}
+
+.rel {
+    position: relative;
+}
+
+hr{
+  border-top: $unitline
+}
+
+.rel {
+    position: relative;
+}
+
+@mixin ratingColor($color, $level: 1 ) {
+		color : lighten(adjust-color($color, $green: $level * 20 , $red: $level * -40) , 15%);
+	}
+
+@mixin allcolor{
+	@each $value in $startlist {
+			.starcolor-#{$value}{
+				@include ratingColor( $redcolor, $value );
+		}
+		
+	}
+}
+
+ // @include transition(all, 0.2s, ease-in-out);
+
+@mixin transition( $transition-time, $method ,$transition-property) {
+    -webkit-transition: $transition-time, $method ,$transition-property;
+    -moz-transition: $transition-time, $method ,$transition-property;
+    -ms-transition: $transition-time, $method ,$transition-property;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-time, $method ,$transition-property;
+}
+
+@mixin transitionDef{
+    @include transition( 500ms, cubic-bezier(0.250, 0.250, 0.750, 0.750) , all)
+}
+
+.transitionDef{
+   @include transitionDef;
+}
