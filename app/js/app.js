@@ -3,6 +3,7 @@
 /* App Module */
 
 var widgetApp = angular.module('widgetApp',[
+	"chart.js",
 	'ngStorage',
 	'ngAnimate',
 	'monospaced.mousewheel',

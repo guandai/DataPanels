@@ -4,16 +4,18 @@
 var widgetControllers = angular.module('widgetControllers', []);
 var test
 
-widgetControllers.controller('widgetCtrl', ['$scope', 'Review', 'Widget', '$localStorage', 'smt', 'value',
+widgetControllers.controller('widgetCtrl', ['$scope', 'Review', 'Widget', 'Email', '$localStorage', 'smt', 'value',
 
-    function($scope, Review, Widget, $localStorage, smt, value) {
+    function($scope, Review, Widget, Email, $localStorage, smt, value) {
         test = $scope
 
         $scope.widgetScope = Widget.scope;
         $scope.reviewScope = Review.scope;
+        $scope.emailScope = Email.scope;
+        $scope.series = ["Sent","Received", "Reply","Received in %","Reply in %"]
 
         //  set default localStroage
-        //$localStorage.$reset()
+        $localStorage.$reset()
         if ($localStorage.widgets) {
             $scope.$storage = $localStorage
         }
@@ -112,7 +114,7 @@ widgetControllers.controller("VerticalCtrl", ['$scope', '$element', 'smt', 'valu
             var buttonshow = smt.getScope(event.target).review.buttonshow 
         }
 
-        if (delta   ) {
+        if (delta) {
                 var newInt = orgInt + delta 
                 if (newInt>0) newInt = 0
                 var btmoffset = 50
@@ -189,5 +191,72 @@ widgetControllers.controller("HorizontalCtrl", ['$scope', '$element', 'smt', 'va
         $scope.showrightfn($scope.horizontalScope, $element)
     }
 
-
 }]);
+
+
+
+
+
+widgetControllers.controller("TableCtrl",  function ($scope) {
+});
+
+widgetControllers.controller("DayLineCtrl",  function ($scope) {
+  
+  $scope.series  = $scope.series.slice(0,3)
+  $scope.emailScope.lastdays = 15
+  
+
+  // slice day data depence how many last day choosed
+  updateLineData()
+  function updateLineData(){
+        $scope.emailScope.dayDataLine = []
+        var skipline = osize($scope.emailScope.dayData) -  $scope.emailScope.lastdays
+        $scope.emailScope.dayLabelsCut=  $scope.emailScope.dayLabels.slice( skipline )
+
+        for (var i in $scope.emailScope.dayDataRev ){
+            if( i !="receivedPer" && i !="replyPer" ){
+                var d = joinAsArray($scope.emailScope.dayDataRev[i]).slice(skipline)            
+                $scope.emailScope.dayDataLine.push(d)   
+            }
+        }  
+  }
+    //  add update button
+  $scope.$watch($scope.lastdays)
+    if(document.getElementById("updateLineButton")) {
+        document.getElementById("updateLineButton")
+        .addEventListener('click', function() {
+            $scope.lastdays=parseInt($scope.lastdays)
+            tr("updated",$scope.emailScope.lastdays )
+            $scope.$apply( updateLineData );
+        });         
+    }
+  
+});
+
+widgetControllers.controller("MonthBarCtrl", function ($scope) {
+    $scope.emailScope.monthDataBar = []
+    $scope.series  = $scope.series.slice(0,3)
+    for (var i in $scope.emailScope.monthDataRev ){
+        if( i !="receivedPer" && i !="replyPer" ){
+            var d = joinAsArray($scope.emailScope.monthDataRev[i])
+            $scope.emailScope.monthDataBar.push(d)  
+        }
+    }  
+});
+
+widgetControllers.controller("YearBarCtrl",   function ($scope) {
+    $scope.emailScope.yearDataBar = []
+    $scope.series  = $scope.series.slice(0,3)
+    for (var i in $scope.emailScope.yearDataRev ){
+        if( i !="receivedPer" && i !="replyPer" ){
+            var d = joinAsArray($scope.emailScope.yearDataRev[i])
+            $scope.emailScope.yearDataBar.push(d)   
+        }
+        
+    }  
+});
+
+
+
+
+

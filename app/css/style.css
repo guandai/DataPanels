@@ -252,4 +252,15 @@ body {
   padding-left: 10px;
   padding-right: 20px; }
 
+.chart-template {
+  width: 450px;
+  height: 300px;
+  margin-top: 40px;
+  text-align: center; }
+  .chart-template .pernote {
+    width: 100%;
+    font-size: 10px; }
+  .chart-template th {
+    text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

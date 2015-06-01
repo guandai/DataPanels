@@ -1,6 +1,6 @@
 ﻿/* Services */
 
-var widgetServices = angular.module('widgetServices', []);
+var widgetServices = angular.module('widgetServices', ['ngResource']);
 
 widgetServices.factory("value", function() {
     return {
@@ -10,58 +10,6 @@ widgetServices.factory("value", function() {
         "changeHeight": 0
     }
 })
-
-widgetServices.factory('Review', ['$http',
-    function($http) {
-        var scope = {}
-        var Review = $http.get('data/reviews.js').success(function(data) {
-
-            tr("size of data:", osize(data))
-                // format input data as an valid Array 
-            var spos = data.indexOf("[")
-            var epos = data.lastIndexOf("]")
-            data = data.substring(spos, epos + 1).replaceAll(/[\n\t\r]*/, "").replaceAll(/\},[\s]*/, "},").replace("},]", "}]")
-            data = JSON.parse(data)
-            tr("review factory get reviews...")
-                // tr(data)
-            var average = 0
-            var count = 0
-            for (var i in data) {
-                data[i].showall = false;
-                data[i].id = i;
-
-                if (!isNaN(parseInt(data[i].starRating))) {
-                    count++
-                    average = (average + parseInt(data[i].starRating))
-                } else {
-                    delete data[i]
-                }
-            }
-            scope.totalReview = count;
-            scope.average = Math.floor(average / count);
-            tr("review size:", osize(data), data)
-            scope.reviews = data
-        });
-
-        Review.scope = scope
-        return Review
-
-    }
-]);
-
-
-widgetServices.factory('Widget', ["$http",
-    function($http) {
-        var scope = {}
-        var Widget = $http.get('data/widgets.json').success(function(data) {
-            scope.widgets = data
-        });
-        Widget.scope = scope
-        return Widget
-    }
-]);
-
-
 
 
 
@@ -130,3 +78,113 @@ widgetServices.factory('anifn', ['smt', function(smt) {
 
     }
 }])
+
+
+
+
+
+widgetServices.factory('Review', ['$http',
+    function($http) {
+        var scope = {}
+        var Review = $http.get('data/reviews.js').success(function(data) {
+
+            tr("size of data:", osize(data))
+                // format input data as an valid Array 
+            var spos = data.indexOf("[")
+            var epos = data.lastIndexOf("]")
+            data = data.substring(spos, epos + 1).replaceAll(/[\n\t\r]*/, "").replaceAll(/\},[\s]*/, "},").replace("},]", "}]")
+            data = JSON.parse(data)
+            tr("review factory get reviews...")
+                // tr(data)
+            var average = 0
+            var count = 0
+            for (var i in data) {
+                
+                if (!isNaN(parseInt(data[i].starRating))) {
+                    data[i].showall = false;
+                    data[i].id = count;
+                    count++
+                    average = (average + parseInt(data[i].starRating))
+                } else {
+                    delete data[i]
+                }
+            }
+            scope.totalReview = count;
+            scope.average = Math.floor(average / count);
+            tr("review size:", osize(data), data)
+            scope.reviews = data
+        });
+
+        Review.scope = scope
+        return Review
+    }
+]);
+
+
+widgetServices.factory('Widget', ["$http",
+    function($http) {
+        var scope = {}
+        var Widget = $http.get('data/widgets.json').success(function(data) {
+            scope.widgets = data
+        });
+        Widget.scope = scope
+        return Widget
+    }
+]);
+
+
+
+widgetServices.factory('Email', ['$http', '$resource',
+  function($http , $resource){
+      var scope = {}
+      // var Email = $resource('data/emails.json');    
+      // Email.get().$promise.then(function(response) {
+      var Email = $http.get('data/emails.json').success(function(response) {
+              tr( "size of data:",osize( response ) )
+              var ta = ["year", "month", "day"]
+             
+             // define objects
+              for (var i in ta) {
+                scope[ ta[i] + "Data"] = {}  
+              }
+              
+              // definde processing function 
+              function builddata(  s , n , d ){
+                if( !s[n] ) s[n] = {"emailSent":0 , "emailReceived":0 , "emailReply":0 , "receivedPer":0, "replyPer":0}     
+                s[n]["emailSent"] += d["emails sent"]
+                s[n]["emailReceived"] += d["email received"]
+                s[n]["emailReply"] += d["email reply"]
+                s[n]["receivedPer"] =  cutper(s[n]["emailReceived"] / s[n]["emailSent"])
+                s[n]["replyPer"] =  cutper(s[n]["emailReply"] / s[n]["emailSent"])
+                return s
+              }
+
+              // pre processing emails data
+              for (var t in response)
+              {   
+                  var data = response[t]
+                  // filter out data which is not from json,  original response include promise and funcitons
+                  if(t.match(/\d{4}-\d{2}-\d{2}/)){  
+                    //  define new object name  and lable name
+                    scope.yearname =  t.match(/(\d{4})-/)[1]
+                    scope.monthname =  scope.yearname + "-" +  t.match(/-(\d{2})-/)[1]
+                    scope.dayname =  t.match(/-(\d{2}-\d{2})/)[1]       
+                    for (var i in ta){  
+                      scope[ta[i]+"Data"] = builddata(  scope[ ta[i]+"Data"] , scope[ ta[i] +"name"] , data)  
+                    }
+                  }
+              }
+
+              for (var i in ta){ 
+                 // generate labels
+                 scope[ta[i]+"Labels"] = Object.keys(scope[ta[i]+"Data"])
+                 // revert row and column
+                 scope[ta[i]+"DataRev"]= revertjson(scope[ta[i]+"Data"])
+                 tr("yeardata:", scope[ta[i]+"Data"] )
+              }
+          });
+      
+      Email.scope=scope
+      return Email
+  }
+]);

@@ -1,0 +1,15 @@
+
+<div class="chart-template" ng-controller="MonthBarCtrl">
+	<canvas id="bar" class="chart chart-bar" data="emailScope.monthDataBar"
+  labels="emailScope.monthLabels" series="series" ></canvas> 
+  
+  <table class="pernote" >
+  <tr><td ng-repeat=" month in emailScope.monthData"  > 
+  	{{month.receivedPer}}, {{month.replyPer}}
+  	<br>
+  	Receive , Reply
+  </td>
+  </tr>
+  </table>
+</div> 
+
