@@ -18,7 +18,24 @@ body{
     bottom: 0;
     background-color: $sideBgColor;
     color: $invertSideColor;
+    button{
+        background-color:transparent;
+        border: 1px solid white;
+        width: 100%;
+    }
 
+    button:hover , .btn:hover , .btn:focus, .btn:visited{
+        color:white;
+        background-color:transparent;
+        border: 1px solid white;
+    }
+    .widget-check-true{
+        box-shadow: 0px 0px 2px 2px white;
+        box-shadow: 0px 0px 5px 5px white;
+    }
+    .widget-check-false{
+
+    }
     div[ng-if="$storage.widgets"]{
     	width:100%;  	
     }

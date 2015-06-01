@@ -1,6 +1,6 @@
 ﻿/* Services */
 
-var widgetServices = angular.module('widgetServices', ['ngResource']);
+var widgetServices = angular.module('widgetServices', ['ngResource', 'ngStorage']);
 
 widgetServices.factory("value", function() {
     return {
@@ -121,12 +121,18 @@ widgetServices.factory('Review', ['$http',
 ]);
 
 
-widgetServices.factory('Widget', ["$http",
-    function($http) {
+widgetServices.factory('Widget', ["$http", "$localStorage" ,
+    function($http, $localStorage) {
         var scope = {}
         var Widget = $http.get('data/widgets.json').success(function(data) {
             scope.widgets = data
+            // set default localStroage
+            // $localStorage.$reset()
+            for (var index in scope.widgets ){
+                if($localStorage.widgetsCheckedSettings[index] != undefined ) scope.widgets[index].checked  = $localStorage.widgetsCheckedSettings[index]
+            }
         });
+
         Widget.scope = scope
         return Widget
     }

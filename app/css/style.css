@@ -237,6 +237,17 @@ body {
   bottom: 0;
   background-color: #353432;
   color: #cacbcd; }
+  #sidebar button {
+    background-color: transparent;
+    border: 1px solid white;
+    width: 100%; }
+  #sidebar button:hover, #sidebar .btn:hover, #sidebar .btn:focus, #sidebar .btn:visited {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white; }
+  #sidebar .widget-check-true {
+    box-shadow: 0px 0px 2px 2px white;
+    box-shadow: 0px 0px 5px 5px white; }
   #sidebar div[ng-if="$storage.widgets"] {
     width: 100%; }
   #sidebar label {

@@ -22,9 +22,7 @@
         
         <script src="../bower_components/Chart.js/Chart.min.js"></script>
         <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-        
-
-
+ 
         <!-- for this app  -->
         <script src="js/controllers.js"></script>
         <script src="js/services.js"></script>
@@ -42,12 +40,10 @@
                 <div id="sidebar" class="bg-info col-md- sidebar-nav-fixed">
                     <h4>SWITCH <br>WIDGETS</h4>
                     <hr>
-                    <!-- detect is localstorage is avaliable  -->
-                    <div ng-if="$storage.widgets" class="form-controlbootstra" ng-repeat="widget in $storage.widgets | orderBy:'name'  ">
-                        <label>{{widget.name}}&nbsp;&nbsp; <input type="checkbox" ng-model="widget.checked"></label><hr>
-                    </div>
-                    <div ng-if="!$storage.widgets"  class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
-                        <label>{{widget.name}}&nbsp;&nbsp; <input type="checkbox" ng-model="widget.checked"></label><hr/>
+                    <div class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
+                        <button ng-click="check(widget.id)" name="{{widget.checked}}" class="btn widget-check-{{widget.checked}}">{{widget.name}}</button><hr/>
+                        <!-- <input type="checkbox" ng-model="widget.checked" ng-change="updateWidgetsChecked(widget.id)" 
+                        class="btn widget-check-{{widget.checked}}">{{widget.name}}</input><hr/>--> 
                     </div>
                 </div>
 
@@ -55,11 +51,7 @@
                 <div id = "widgetshow"  class="widgetshow">
                     <h2>Widgets</h2>
                     <br>
-                    <!-- detect is localstorage is avaliable  -->
-                    <div ng-if="$storage.widgets" class="allWidgets" ng-repeat="widget in $storage.widgets | orderBy:'id' ">
-                        <div class="share-panel-wrap" ></div>
-                    </div>
-                    <div ng-if="!$storage.widgets" class="allWidgets" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
+                    <div class="allWidgets" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
                         <div class="share-panel-wrap" ></div>
                     </div>
                 </div>

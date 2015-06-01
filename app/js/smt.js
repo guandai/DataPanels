@@ -648,7 +648,7 @@ function revertjson(obj){
 
 
 
-// enumerate each object in a object to match id
+// enumerate each object in a object to match valname
 function enmuobj( scope , valname, val, docb ){
     for (var i in scope) {
             if ( scope[i][valname] === val) {
