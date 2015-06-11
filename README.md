@@ -1,4 +1,4 @@
-# job test 
+# Angular seed project for dataPanels usage
 
 ## The code need to be run in http server 
 
