@@ -3,3 +3,7 @@
 /tmp
 .DS_Store
 bower_components/*
+
+app/bower_components/*
+
+node_modules/*

@@ -1,62 +1,23 @@
 ﻿<!DOCTYPE html>
-<html ng-app="widgetApp">
+<html >
     <head>
-    <meta http-equiv="refresh" content="5000" >
-        <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <meta http-equiv="refresh" content="999999999999" >
+        <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+        <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+        <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+        
+        <title>Data Panel App</title>
+        <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
          <!-- my personal tools -->
         <script src="js/smt.js"></script>
-
-        <!-- Basic-->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../bower_components/angular/angular.min.js"></script>
-        <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="../bower_components/ngStorage/ngStorage.min.js"></script>
-        <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-        <script src="../bower_components/ngStorage/ngStorage.min.js"></script>
-        
-        <script src="../bower_components/angular-mousewheel/mousewheel.js"></script>
-        <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
-        <script src="../bower_components/hamsterjs/hamster.js"></script>
-        
-        <script src="../bower_components/Chart.js/Chart.min.js"></script>
-        <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
- 
-        <!-- for this app  -->
-        <script src="js/controllers.js"></script>
-        <script src="js/services.js"></script>
-        <script src="js/directives.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/animations.js"></script>
-        <script src="js/app.js"></script>
-       
+    
+       <!-- <base href="/"> -->
     </head>
     <body>
-        <div class="widgets container"  ng-controller="widgetCtrl">
-            <div id = "page" class="row">
+        <div ng-view></div>
 
-             <!-- side  for check boxes -->
-                <div id="sidebar" class="bg-info col-md- sidebar-nav-fixed">
-                    <h4>SWITCH <br>WIDGETS</h4>
-                    <hr>
-                    <div class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
-                        <button ng-click="check(widget.id)" name="{{widget.checked}}" class="btn widget-check-{{widget.checked}}">{{widget.name}}</button><hr/>
-                        <!-- <input type="checkbox" ng-model="widget.checked" ng-change="updateWidgetsChecked(widget.id)" 
-                        class="btn widget-check-{{widget.checked}}">{{widget.name}}</input><hr/>--> 
-                    </div>
-                </div>
-
-                <!-- left panel for main space -->
-                <div id = "widgetshow"  class="widgetshow">
-                    <h2>Widgets</h2>
-                    <br>
-                    <div class="allWidgets" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
-                        <div class="share-panel-wrap" ></div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
+        <script data-main="require-config" src="bower_components/requirejs/require.js"></script>
     </body>
 </html>

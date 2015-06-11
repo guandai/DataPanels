@@ -1,11 +1,14 @@
 ﻿'use strict';
+define([
+    'angular'
+], function(angular) {
+    /* Filters */
 
-/* Filters */
+    // not used yet
+    angular.module('widgetFilters', []).factory('translate', function() {
+        return function(input) {
+            return input
+        };
+    })
 
-// not used yet
-angular.module('widgetFilters', []).filter('translate', function() {
-  return function(input) {
-    return input
-  };
 });
-
