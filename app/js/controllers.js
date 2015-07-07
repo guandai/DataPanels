@@ -1,16 +1,15 @@
 ﻿"use strict";
-
 define([
     'angular'
 ], function(angular) {
     /* Controllers */
 
     var widgetControllers = angular.module("widgetControllers", []);
-    var test;
 
-    widgetControllers.controller("widgetCtrl", ["$scope", "Review", "Widget", "Email", "$localStorage", "smt", "value", "resourceExample",
 
-        function($scope, Review, Widget, Email, $localStorage, smt, value , resourceExample) {
+    widgetControllers.controller("widgetCtrl", ["$scope", "Review", "Widget", "Email", "$localStorage", "widSmt", "value", "resourceExample",
+
+        function($scope, Review, Widget, Email, $localStorage, widSmt, value, resourceExample) {
             test = $scope;
             //$scope.resourceExample = resourceExample.getbyid( { apiid:123 } ).$promise.then(function(data){
             // this apiid  will replace :appid ,  it is not url param
@@ -29,7 +28,7 @@ define([
 
             $scope.check = function(id) {
                 if ($scope.widgetScope.widgets) {
-                    enmuobj($scope.widgetScope.widgets, "id", id, function(scope, index) {
+                    smt.enmuobj($scope.widgetScope.widgets, "id", id, function(scope, index) {
                         scope[index].checked = !scope[index].checked;
                         $scope.updateWidgetsChecked(index);
                     });
@@ -41,10 +40,10 @@ define([
             };
 
             $scope.showupfn = function(scope, element) {
-                tr("showup")
-                var heightint = smt.getcssint(element, ".review-list", "height"); // total height
-                var topint = smt.getcssint(element, ".review-list", "top"); // position
-                var listheight = smt.getcssint(element, ".review-list-wrap", "height"); // window height
+                
+                var heightint = widSmt.getcssint(element, ".review-list", "height"); // total height
+                var topint = widSmt.getcssint(element, ".review-list", "top"); // position
+                var listheight = widSmt.getcssint(element, ".review-list-wrap", "height"); // window height
                 //    tr(heightint,topint,listheight,"topint > -heightint + listheight",topint > -heightint + listheight)
                 if (topint > -heightint + listheight / 2) {
                     scope.aniclass = "slideup";
@@ -52,8 +51,8 @@ define([
             };
 
             $scope.showdownfn = function(scope, element) {
-                tr("showdown")
-                var topint = smt.getcssint(element, ".review-list", "top");
+                
+                var topint = widSmt.getcssint(element, ".review-list", "top");
                 // tr(topint,"topint < 0",topint < 0)
                 if (topint <= -value.reviewHeight) {
                     scope.aniclass = "slidedown";
@@ -61,40 +60,40 @@ define([
             };
 
             $scope.showleftfn = function(scope, element) {
-                var widthint = smt.getcssint(element, ".review-list", "width"); // total width
-                var leftint = smt.getcssint(element, ".review-list", "left"); // position
-                var listwidth = smt.getcssint(element, ".review-list-wrap", "width"); // window width
+                var widthint = widSmt.getcssint(element, ".review-list", "width"); // total width
+                var leftint = widSmt.getcssint(element, ".review-list", "left"); // position
+                var listwidth = widSmt.getcssint(element, ".review-list-wrap", "width"); // window width
                 if (leftint > -widthint + listwidth / 2) {
                     scope.aniclass = "slideleft";
                 }
             };
 
             $scope.showrightfn = function(scope, element) {
-                var leftint = smt.getcssint(element, ".review-list", "left");
+                var leftint = widSmt.getcssint(element, ".review-list", "left");
                 if (leftint <= -value.reviewWidth) {
                     scope.aniclass = "slideright";
                 }
             };
         }
     ]);
-    //).$inject=["$scope", "Review", "Widget", "Email", "$localStorage", "smt", "value"]
+    //).$inject=["$scope", "Review", "Widget", "Email", "$localStorage", "widSmt", "value"]
 
 
-    widgetControllers.controller("VerticalCtrl", ["$scope", "$element", "smt", "value", function($scope, $element, smt, value) {
+    widgetControllers.controller("VerticalCtrl", ["$scope", "$element", "widSmt", "value", function($scope, $element, widSmt, value) {
 
         var verticalScope = $scope.verticalScope = angular.copy($scope.reviewScope);
 
         verticalScope.mousewheelVerti = function(event, delta) {
             event.preventDefault();
             var target = $("#mousewheelVerti");
-            var orgInt = smt.getint(target.css("top"));
-            var orgProp = smt.getint(target.css("height"));
-            var wrapProp = smt.getint(target.parent().css("height"));
+            var orgInt = widSmt.getint(target.css("top"));
+            var orgProp = widSmt.getint(target.css("height"));
+            var wrapProp = widSmt.getint(target.parent().css("height"));
 
 
             //  tr(event.target, target, orgInt, orgProp , wrapProp)
             if (event.target.className.match("reviewBody")) {
-                var buttonshow = smt.getScope(event.target).review.buttonshow;
+                var buttonshow = widSmt.getScope(event.target).review.buttonshow;
             }
 
             if (delta) {
@@ -119,20 +118,16 @@ define([
     }]);
 
 
-
-
-
-
-    widgetControllers.controller("HorizontalCtrl", ["$scope", "$element", "smt", "value", function($scope, $element, smt, value) {
+    widgetControllers.controller("HorizontalCtrl", ["$scope", "$element", "widSmt", "value", function($scope, $element, widSmt, value) {
 
         var horizontalScope = $scope.horizontalScope = angular.copy($scope.reviewScope)
-
+        
         $element.parent().parent().parent().css("background-color", $element.css("background-color")).css("color", $element.css("color"))
         horizontalScope.mousewheel = function(event, delta) {
-            var orgint = smt.getint($(event.target).css("top"))
-            var orgheight = smt.getint($(event.target).css("height"))
-            var wrapheight = smt.getint($(event.target).parent().css("height"))
-            var buttonshow = smt.getScope(event.target).review.buttonshow
+            var orgint = widSmt.getint($(event.target).css("top"))
+            var orgheight = widSmt.getint($(event.target).css("height"))
+            var wrapheight = widSmt.getint($(event.target).parent().css("height"))
+            var buttonshow = widSmt.getScope(event.target).review.buttonshow
             if (delta && buttonshow) {
                 var newint = orgint + delta
                 if (newint > 0) newint = 0
@@ -146,13 +141,13 @@ define([
         horizontalScope.mousewheelHori = function(event, delta) {
 
             var target = $("#mousewheelHori")
-            var orgInt = smt.getint(target.css("left"))
-            var orgProp = smt.getint(target.css("width"))
-            var wrapProp = smt.getint(target.parent().css("width"))
+            var orgInt = widSmt.getint(target.css("left"))
+            var orgProp = widSmt.getint(target.css("width"))
+            var wrapProp = widSmt.getint(target.parent().css("width"))
 
             //  tr(event.target, target, orgInt, orgProp , wrapProp)
             if (event.target.className.match("reviewBody")) {
-                var buttonshow = smt.getScope(event.target).review.buttonshow
+                var buttonshow = widSmt.getScope(event.target).review.buttonshow
             }
 
             if (delta && !buttonshow) {
@@ -170,13 +165,49 @@ define([
         }
 
         horizontalScope.showright = function() {
+         
             $scope.showrightfn($scope.horizontalScope, $element)
         }
 
     }]);
 
 
+    widgetControllers.controller("ImgloaderCtrl", function($scope, $element) {
+        var width = 300;
+        var height = 200;
+        var opt = {
+            wheelSpeed: 1,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        }
 
+        var container = document.getElementById('imgLoader');
+
+        PerfectScrollbar.initialize(container);
+        container.style.width  = width + "px";
+        container.style.height = height + "px";
+        PerfectScrollbar.update(container, opt);
+
+        var imgLoader = $("#imgLoader")
+        // imgLoader.width(width).height(height);
+        // imgLoader.perfectScrollbar();
+        // imgLoader.perfectScrollbar('update', opt);
+
+
+        imgLoader.on('appear', function(event, $all_disappeared_elements) {
+            // this element is now outside browser viewport
+            console.log(">> appear",$all_disappeared_elements)
+        });
+
+        imgLoader.on('disappear', function(event, $all_disappeared_elements) {
+            // this element is now outside browser viewport
+            console.log(">> disappear",$all_disappeared_elements)
+        });
+         
+        imgLoader.appear()
+
+
+    });
 
 
     widgetControllers.controller("TableCtrl", function($scope) {});
@@ -192,12 +223,12 @@ define([
 
         function updateLineData() {
                 $scope.emailScope.dayDataLine = []
-                var skipline = osize($scope.emailScope.dayData) - $scope.emailScope.lastdays
+                var skipline = smt.osize($scope.emailScope.dayData) - $scope.emailScope.lastdays
                 $scope.emailScope.dayLabelsCut = $scope.emailScope.dayLabels.slice(skipline)
 
                 for (var i in $scope.emailScope.dayDataRev) {
                     if (i != "receivedPer" && i != "replyPer") {
-                        var d = joinAsArray($scope.emailScope.dayDataRev[i]).slice(skipline)
+                        var d = smt.joinAsArray($scope.emailScope.dayDataRev[i]).slice(skipline)
                         $scope.emailScope.dayDataLine.push(d)
                     }
                 }
@@ -220,7 +251,7 @@ define([
         $scope.series = $scope.series.slice(0, 3);
         for (var i in $scope.emailScope.monthDataRev) {
             if (i != "receivedPer" && i != "replyPer") {
-                var d = joinAsArray($scope.emailScope.monthDataRev[i]);
+                var d = smt.joinAsArray($scope.emailScope.monthDataRev[i]);
                 $scope.emailScope.monthDataBar.push(d);
             }
         }
@@ -231,7 +262,7 @@ define([
         $scope.series = $scope.series.slice(0, 3);
         for (var i in $scope.emailScope.yearDataRev) {
             if (i != "receivedPer" && i != "replyPer") {
-                var d = joinAsArray($scope.emailScope.yearDataRev[i]);
+                var d = smt.joinAsArray($scope.emailScope.yearDataRev[i]);
                 $scope.emailScope.yearDataBar.push(d);
             }
 

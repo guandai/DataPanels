@@ -1,0 +1,1 @@
+define([],function(){function addGetHookIf(conditionFn,hookFn){return{get:function(){var condition=conditionFn();if(null!=condition)return condition?void delete this.get:(this.get=hookFn).apply(this,arguments)}}}return addGetHookIf});

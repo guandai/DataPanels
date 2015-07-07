@@ -1,0 +1,7 @@
+/**
+ * @license AngularJS v1.3.16
+ * (c) 2010-2014 Google, Inc. http://angularjs.org
+ * License: MIT
+ */
+
+!function(window,angular,undefined){"use strict";angular.module("ngCookies",["ng"]).factory("$cookies",["$rootScope","$browser",function($rootScope,$browser){function push(){var name,value,browserCookies,updated;for(name in lastCookies)isUndefined(cookies[name])&&($browser.cookies(name,undefined),delete lastCookies[name]);for(name in cookies)value=cookies[name],angular.isString(value)||(value=""+value,cookies[name]=value),value!==lastCookies[name]&&($browser.cookies(name,value),lastCookies[name]=value,updated=!0);if(updated){browserCookies=$browser.cookies();for(name in cookies)cookies[name]!==browserCookies[name]&&(isUndefined(browserCookies[name])?(delete cookies[name],delete lastCookies[name]):cookies[name]=lastCookies[name]=browserCookies[name])}}var lastBrowserCookies,cookies={},lastCookies={},runEval=!1,copy=angular.copy,isUndefined=angular.isUndefined;return $browser.addPollFn(function(){var currentCookies=$browser.cookies();lastBrowserCookies!=currentCookies&&(lastBrowserCookies=currentCookies,copy(currentCookies,lastCookies),copy(currentCookies,cookies),runEval&&$rootScope.$apply())})(),runEval=!0,$rootScope.$watch(push),cookies}]).factory("$cookieStore",["$cookies",function($cookies){return{get:function(key){var value=$cookies[key];return value?angular.fromJson(value):value},put:function(key,value){$cookies[key]=angular.toJson(value)},remove:function(key){delete $cookies[key]}}}])}(window,window.angular);

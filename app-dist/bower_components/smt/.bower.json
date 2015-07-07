@@ -1,0 +1,44 @@
+{
+  "name": "smt",
+  "main": [
+    "./dist/smt.js",
+    "./dist/smt.min.js"
+  ],
+  "authors": [
+    "zheng dai<twindai@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guandai/smt.git"
+  },
+  "description": "An light weight function extension like underscore",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "isomophic",
+    "smt",
+    "nodejs"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "spec"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/guandai/smt",
+  "_release": "c39ac0f1bf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c39ac0f1bff77e379bf556f0d48da7f9143eddcc"
+  },
+  "_source": "git://github.com/guandai/smt.git",
+  "_target": "*",
+  "_originalSource": "guandai/smt",
+  "_direct": true
+}

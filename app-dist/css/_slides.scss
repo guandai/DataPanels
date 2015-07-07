@@ -1,0 +1,67 @@
+
+.#{$slideleft}-enter, .#{$slideleft}-leave, .#{$slideright}-enter, .#{$slideright}-leave,
+.#{$slidedown}-enter, .#{$slidedown}-leave, .#{$slideup}-enter, .#{$slideup}-leave,
+.#{$slideleft}-add, .#{$slideleft}-remove, .#{$slideright}-add, .#{$slideright}-remove,
+.#{$slidedown}-add, .#{$slidedown}-remove, .#{$slideup}-add, .#{$slideup}-remove
+{ 
+    @include $defani;
+} 
+ 
+// .#{$slideup}-enter , .#{$slideup}-add {
+// //    top: 0px;
+// }
+// .#{$slideup}-enter.#{$slideup}-enter-active,
+// .#{$slideup}-add.#{$slideup}-add-active{
+//   //  top: 150px;
+// }
+// .#{$slideup}-leave , .#{$slideup}-remove {
+//     //top: -150px;
+// }
+// .#{$slideup}-leave.#{$slideup}-leave-active,
+// .#{$slideup}-remove.#{$slideup}-leave-remove{
+//     //top: 0px;
+// }
+
+
+// .#{$slidedown}-enter {
+//   //  bottom: 100%;
+// }
+// .#{$slidedown}-enter.#{$slidedown}-enter-active {
+//    // bottom: 0;
+// }
+// .#{$slidedown}-leave {
+//    // bottom: 0;
+// }
+// .#{$slidedown}-leave.#{$slidedown}-leave-active{
+//   //  bottom: -100%;
+// }
+
+
+// .#{$slideleft}-enter {
+//     left: 100%;
+// }
+// .#{$slideleft}-enter.#{$slideleft}-enter-active {
+//     left: 0;
+// }
+// .#{$slideleft}-leave {
+//     left: 0;
+// }
+// .#{$slideleft}-leave.#{$slideleft}-leave-active{
+//     left: -100%;
+// }
+
+
+// .#{$slideright}-enter {
+//     right: 100%;
+// }
+// .#{$slideright}-enter.#{$slideright}-enter-active {
+//     right: 0;
+// }
+// .#{$slideright}-leave {
+//     right: 0;
+// }
+// .#{$slideright}-leave.#{$slideright}-leave-active{
+//     right: -100%;
+// }
+
+

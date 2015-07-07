@@ -1,23 +1,19 @@
 ({
-    baseUrl: 'scripts',
-    paths: {
-        jquery: 'jquery-2.0.0.min',
-        ...
-        tablesorter: 'jquery.tablesorter-2.0.5.min',
-        zeroclipboard: 'zeroclipboard-1.0.7.min'
+    appDir: "./",
+    baseUrl: "./",
+    removeCombined: true,
+    mainConfigFile: "require-config.js",
+    fileExclusionRegExp: /^(r|build)\.js$/,
+    modules: [{
+        name: 'boot'
+    }],
+    findNestedDependencies: true,
+    dir: "../app-dist",
+    preserveLicenseComments: true,
+    generateSourceMaps: false,
+    optimize: 'uglify2',
+    uglify2: {
+        mangle: false
     },
-    modules: [
-        {
-            name: 'foo/main'
-            excludes: ...
-        },
-        {
-            name: 'libraries'
-        },
-        {
-            name: 'plugins'
-        }
-    ],
-    optimize: 'uglify',
-    out: 'production/js/foo.js'
+    optimizeCss: "standard"
 })

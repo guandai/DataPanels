@@ -1,0 +1,1 @@
+define(["../core","../queue","../effects"],function(jQuery){return jQuery.fn.delay=function(time,type){return time=jQuery.fx?jQuery.fx.speeds[time]||time:time,type=type||"fx",this.queue(type,function(next,hooks){var timeout=setTimeout(next,time);hooks.stop=function(){clearTimeout(timeout)}})},jQuery.fn.delay});

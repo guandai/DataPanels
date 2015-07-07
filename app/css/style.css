@@ -1,3 +1,8 @@
+@import url(../bower_components/html5-boilerplate/dist/css/normalize.css);
+@import url(../bower_components/html5-boilerplate/dist/css/main.css);
+@import url(../bower_components/angular-chart.js/dist/angular-chart.css);
+@import url(../bower_components/bootstrap/dist/css/bootstrap.min.css);
+@import url(../bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css);
 .alc, .share-panel-wrap .share-panel {
   text-align: center; }
 
@@ -176,6 +181,18 @@ hr {
     .basic-template .uparrow:hover, .vertical-template .uparrow:hover, .horizontal-template .uparrow:hover, .basic-template .downarrow:hover, .vertical-template .downarrow:hover, .horizontal-template .downarrow:hover, .basic-template .leftarrow:hover, .vertical-template .leftarrow:hover, .horizontal-template .leftarrow:hover, .basic-template .rightarrow:hover, .vertical-template .rightarrow:hover, .horizontal-template .rightarrow:hover {
       text-shadow: 0px 0px 7px #ebbe1f; }
 
+.imgloader-template #imgLoader {
+  position: relative;
+  margin: 0px auto;
+  padding: 0px;
+  width: 300px;
+  height: 200px;
+  overflow: auto; }
+.imgloader-template .imgLoaderContent {
+  background-image: url("../img/longhead.jpg");
+  width: 1010px;
+  height: 250px; }
+
 .vertical-template {
   width: 350px; }
   .vertical-template .panel-body .review-list-wrap {
@@ -241,7 +258,10 @@ body {
     background-color: transparent;
     border: 1px solid white;
     width: 100%; }
-  #sidebar button:hover, #sidebar .btn:hover, #sidebar .btn:focus, #sidebar .btn:visited {
+  #sidebar button:hover,
+  #sidebar .btn:hover,
+  #sidebar .btn:focus,
+  #sidebar .btn:visited {
     color: white;
     background-color: transparent;
     border: 1px solid white; }

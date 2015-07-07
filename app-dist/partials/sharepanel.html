@@ -1,0 +1,8 @@
+<div class="share-panel" ng-if="widget.checked">
+    <button class="btn btn-primary btn-xs boxbtn" ng-click="check(widget.id)">X
+    </button>
+    <div class="boxtitle-wrap">
+        <h5 class="boxtitle">{{widget.name}}</h5>
+    </div>
+    <div class="switch-panel" type="{{widget.type}}" template="{{widget.template}}"></div>
+</div>

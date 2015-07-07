@@ -1,7 +1,7 @@
 /*global module, inject */
 'use strict';
 
-define(['app', 'angularMocks'], function(app) {
+define(['boot', 'js/app' , 'angularMocks'], function(app) {
 	describe('widgetServices module', function() {
 
 		beforeEach(module('widgetServices'));

@@ -1,0 +1,24 @@
+﻿<!-- <div class="widgets container" ng-controller="widgetCtrl"> -->
+<div class="widgets container" >
+    <div id="page" class="row">
+        <!-- side  for check boxes -->
+        <div id="sidebar" class="bg-info col-md- sidebar-nav-fixed">
+            <h4>SWITCH <br>WIDGETS</h4>
+            <hr>
+            <div class="form-controlbootstra" ng-repeat="widget in widgetScope.widgets | orderBy:'name'  ">
+                <button ng-click="check(widget.id)" name="{{widget.checked}}" class="btn widget-check-{{widget.checked}}">{{widget.name}}</button>
+                <hr/>
+                <!-- <input type="checkbox" ng-model="widget.checked" ng-change="updateWidgetsChecked(widget.id)" 
+                        class="btn widget-check-{{widget.checked}}">{{widget.name}}</input><hr/>-->
+            </div>
+        </div>
+        <!-- left panel for main space -->
+        <div id="widgetshow" class="widgetshow">
+            <h2>Widgets</h2>
+            <br>
+            <div class="allWidgets" ng-repeat="widget in widgetScope.widgets | orderBy:'id' ">
+                <div class="share-panel-wrap"></div>
+            </div>
+        </div>
+    </div>
+</div>

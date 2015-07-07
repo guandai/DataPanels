@@ -1,0 +1,1 @@
+define(["../core"],function(jQuery){return jQuery.acceptData=function(elem){var noData=jQuery.noData[(elem.nodeName+" ").toLowerCase()],nodeType=+elem.nodeType||1;return 1!==nodeType&&9!==nodeType?!1:!noData||noData!==!0&&elem.getAttribute("classid")===noData},jQuery.acceptData});

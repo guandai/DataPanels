@@ -1,0 +1,1 @@
+define(["../../core","../../selector"],function(jQuery){return function(elem,el){return elem=el||elem,"none"===jQuery.css(elem,"display")||!jQuery.contains(elem.ownerDocument,elem)}});

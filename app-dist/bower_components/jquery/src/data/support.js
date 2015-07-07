@@ -1,0 +1,1 @@
+define(["../var/support"],function(support){return function(){var div=document.createElement("div");if(null==support.deleteExpando){support.deleteExpando=!0;try{delete div.test}catch(e){support.deleteExpando=!1}}div=null}(),support});

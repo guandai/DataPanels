@@ -1,5 +1,4 @@
-'use strict';
-
+this.__karma__= window.__karma__;
 if (window.__karma__) {
     var allTestFiles = [];
     var TEST_REGEXP = /spec\.js$/;
@@ -16,8 +15,11 @@ if (window.__karma__) {
     });
 }
 
+
+
 require.config({
     paths: {
+        jquery: 'bower_components/jquery/dist/jquery',
         angular: 'bower_components/angular/angular',
         angularAMD: 'bower_components/angularAMD/angularAMD',
         angularCookies: 'bower_components/angular-cookies/angular-cookies',
@@ -30,20 +32,25 @@ require.config({
         angularUIRouter: 'bower_components/angular-ui-router/release/angular-ui-router',
         chartjs: 'bower_components/Chart.js/Chart',
         angularChart: 'bower_components/angular-chart.js/angular-chart',
+        perfectScrollbarJquery: 'bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery',
+        perfectScrollbar: 'bower_components/perfect-scrollbar/js/perfect-scrollbar',
+        jqueryAppear: 'bower_components/jquery_appear/jquery.appear',
+        smt: 'bower_components/smt/dist/smt',
         // cant use .  when define paths name
         hamsterjs: 'bower_components/hamsterjs/hamster',
-        jquery: 'bower_components/jquery/dist/jquery',
+        modenizr: "bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min",
         ngStorage: 'bower_components/ngstorage/ngStorage',
         text: 'bower_components/requirejs-text/text',
         angularAnimate: 'bower_components/angular-animate/angular-animate.min',
         // must use 1.3
         //domReady: "bower_components/requirejs-domready/domready"
     },
-    map : {
-        "angularChart":{
-        	"chart.js": "chartjs"
+    map: {
+        "angularChart": {
+            "chart.js": "chartjs"
         }
     },
+
     shim: {
         'angular': {
             'exports': 'angular'
@@ -55,6 +62,10 @@ require.config({
             deps: ['angular'],
             'exports': 'angular.mock'
         },
+        'chartjs': {
+            'exports': 'Chart'
+        },
+        'jqueryAppear': ['jquery'],
         'angularBootstrap': ['angular'],
         'angularAnimate': ['angular'],
         'angularMousewheel': {
@@ -64,38 +75,9 @@ require.config({
     priority: [
         "angular"
     ],
-    deps: window.__karma__ ? allTestFiles : [],
-    callback: window.__karma__ ? window.__karma__.start : null,
-    baseUrl: window.__karma__ ? '/base/app' : '',
+    deps : this.__karma__ ? allTestFiles : [],
+    callback : this.__karma__ ? this.__karma__.start : null,
+    baseUrl : this.__karma__ ? '/base/app' : ''
 });
 
-require([
-   // 'domReady', 
-    'angular',
-    'angularAnimate',
-    'angularRoute',
-    'angularMousewheel',
-    'hamsterjs',
-    'angularChart',
-    'angularAMD',
-    'ngStorage',
-    'angularBootstrap',
-    'angularResource',
-    'angularUIRouter',
-    'jquery',
-    // local files under baseUrl no need to load  in this case is ""
-    
-    'js/controllers',
-    'js/animations',
-    'js/services',
-    'js/directives',
-    'js/filters',
-    'js/smt',
-    'app'
-], function(angular, app) {
-    var $html = angular.element(document.getElementsByTagName('html')[0]);
-    angular.element().ready(function() {
-        // bootstrap the app manually
-        angular.bootstrap(document, ['widgetApp']);
-    });
-});
+require(["boot"]);

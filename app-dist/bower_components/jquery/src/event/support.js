@@ -1,0 +1,1 @@
+define(["../var/support"],function(support){return function(){var i,eventName,div=document.createElement("div");for(i in{submit:!0,change:!0,focusin:!0})eventName="on"+i,(support[i+"Bubbles"]=eventName in window)||(div.setAttribute(eventName,"t"),support[i+"Bubbles"]=div.attributes[eventName].expando===!1);div=null}(),support});

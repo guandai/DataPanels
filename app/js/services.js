@@ -1,5 +1,6 @@
 ﻿define([
-    'angular'
+    'angular',
+    'angularResource'
 ], function(angular) {
 
     /* Services */ 
@@ -28,7 +29,6 @@
         //     //console.log(getResponseHeaders())
         // })
 
-
         return SomeResources
     }])
 
@@ -44,7 +44,7 @@
 
 
 
-    widgetServices.factory('smt', function() {
+    widgetServices.factory('widSmt', function() {
         return {
             getScope: function(e) {
                 return angular.element(e).scope();
@@ -61,13 +61,13 @@
 
 
     // inject a function  for animation 
-    widgetServices.factory('anifn', ['smt', function(smt) {
+    widgetServices.factory('anifn', ['widSmt', function(widSmt) {
 
         return {
             setAniOpt: function(element, curclass, done) {
                 var aniopt = {}
                 aniopt.duration = 500;
-                scope = smt.getScope(element)
+                scope = widSmt.getScope(element)
                 aniopt.complete = function() {
                     done
                     // tr("done aniclass")
@@ -77,21 +77,21 @@
                             // tr(element[0])
                             // tr(scope[scopeName])
                         scope[scopeName].aniclass = "";
-                        tr("clear aniclass")
+                        smt.tr("clear aniclass")
                     })
                 }
                 return aniopt;
             },
 
             animateReview: function(props) {
-                tr("initial", props)
+                smt.tr("initial", props)
                     // need to get instance of function  
                 var rundone = this.rundone
                 var setAniOpt = this.setAniOpt
 
                 return {
                     addClass: function(element, curclass, done) {
-                        tr("start addClass:", curclass)
+                        smt.tr("start addClass:", curclass)
                         var aniopt = setAniOpt.apply(null, arguments)
                         jQuery(element).clearQueue().animate(
                             props,
@@ -101,7 +101,7 @@
                     removeClass: function(element, curclass, done) {
                         //var aniopt = setAniOpt.apply(null, arguments)
                         done
-                        tr("removed", curclass)
+                        smt.tr("removed", curclass)
                             //rundone.apply(this, args)
                     }
                 }
@@ -117,14 +117,16 @@
     widgetServices.factory('Review', ['$http',
         function($http) {
             var scope = {}
-            var Review = $http.get('data/reviews.js').success(function(data) {
-
-                tr("size of data:", osize(data))
-                    // format input data as an valid Array 
-                var spos = data.indexOf("[")
-                var epos = data.lastIndexOf("]")
-                data = data.substring(spos, epos + 1).replaceAll(/[\n\t\r]*/, "").replaceAll(/\},[\s]*/, "},").replace("},]", "}]")
-                data = JSON.parse(data)
+            var Review = $http.get('data/reviews.json').success(function(data) {
+                
+                smt.tr("size of data:", smt.osize(data))
+                //  angular  Parsed  json  automatically 
+                // format input data as an valid Array 
+                //var spos = data.indexOf("[")
+                //var epos = data.lastIndexOf("]")
+                //data = data.substring(spos, epos + 1).replaceAll(/[\n\t\r]*/, "").replaceAll(/\},[\s]*/, "},").replace("},]", "}]")
+                console.log(data)
+                
                     //tr("review factory get reviews...")
                     // tr(data)
                 var average = 0
@@ -142,9 +144,11 @@
                 }
                 scope.totalReview = count;
                 scope.average = Math.floor(average / count);
-                tr("review size:", osize(data), data)
+                smt.tr("review size:", smt.osize(data), data)
                 scope.reviews = data
-            });
+            }).error(function(err){
+                smt.tr(err)
+            })
 
             Review.scope = scope
             return Review
@@ -177,7 +181,7 @@
 
             // Email.get().$promise.then(function(response) {
             var Email = $http.get('data/emails.json').success(function(response) {
-                tr("size of data:", osize(response))
+                smt.tr("size of data:", smt.osize(response))
                 var ta = ["year", "month", "day"]
 
                 // define objects
@@ -197,8 +201,8 @@
                     s[n]["emailSent"] += d["emails sent"]
                     s[n]["emailReceived"] += d["email received"]
                     s[n]["emailReply"] += d["email reply"]
-                    s[n]["receivedPer"] = cutper(s[n]["emailReceived"] / s[n]["emailSent"])
-                    s[n]["replyPer"] = cutper(s[n]["emailReply"] / s[n]["emailSent"])
+                    s[n]["receivedPer"] = smt.fillzero(s[n]["emailReceived"] / s[n]["emailSent"])
+                    s[n]["replyPer"] = smt.fillzero(s[n]["emailReply"] / s[n]["emailSent"])
                     return s
                 }
 
@@ -221,7 +225,7 @@
                     // generate labels
                     scope[ta[i] + "Labels"] = Object.keys(scope[ta[i] + "Data"])
                         // revert row and column
-                    scope[ta[i] + "DataRev"] = revertjson(scope[ta[i] + "Data"])
+                    scope[ta[i] + "DataRev"] = smt.revertjson(scope[ta[i] + "Data"])
                         //tr("data:", scope[ta[i]+"Data"] )
                 }
             });
@@ -233,6 +237,6 @@
 
 
 
-
+   return widgetServices
 
 });

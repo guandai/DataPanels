@@ -23,6 +23,7 @@
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
+    "build" : "cd app && r.js -o build.js",
     "protractor": "protractor e2e-tests/protractor.conf.js"
   },
   "devDependencies": {

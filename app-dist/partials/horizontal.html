@@ -1,0 +1,41 @@
+<div class="horizontal-template ng-scope" ng-controller="HorizontalCtrl">
+    <div class="panel-body">
+        <div class="review-list-title">
+            <span class="averageText" ng-class="avgcolor{{horizontalScope.average}}">Average&nbsp;&nbsp;</span>
+            <img class="starRating-lg" src="img/{{horizontalScope.average}}-stars-260x48.png" />
+            <br>
+            <span class="review-list-title-subline">
+                <span class="totalReview">{{horizontalScope.totalReview}}  customers reviews on </span>
+            <img src="img/trustpilot-logo-dark-bg-120x18.png">
+            </span>
+            <hr>
+        </div>
+        <div  class="review-list-wrap" msd-wheel="horizontalScope.mousewheelHori($event, $delta, $deltaX, $deltaY)" >
+            <div ng-class="['review-list' , horizontalScope.aniclass]" id="mousewheelHori" >
+                <div class="review-list-repeat-wrap" ng-repeat="review in horizontalScope.reviews">
+                    <div review-list-repeat ng-class="['review-list-repeat', review.showclass]" >
+                        <span class="firstName">{{review.firstName}}</span>&nbsp;:&nbsp;
+                        <span class="reviewTitle">{{review.reviewTitle}}</span>
+                        <br>
+                        <img class="starRating-sm" src="img/{{review.starRating}}-stars-260x48.png" />
+                        <span class="rate-line">
+                        <span class="fullName">&nbsp;Rate by {{review.fullName}}</span>
+                        <span ng-if="review.location" class="location"> from {{review.location}}</span>
+                        </span>
+                        <div class="reviewBody-wrap">
+                        <div class="reviewBody starcolor-{{review.starRating}} " id="mousewheel" 
+                              msd-wheel="horizontalScope.mousewheel($event, $delta, $deltaX, $deltaY)">
+                                {{review.reviewBody}}</div>
+                        </div>
+                    </div>
+
+                    <div class="button-wrap-readmore" ng-if="review.buttonshow">
+                        <button ng-click="review.showall=!review.showall" class="readmore btn-xs btn-info btn">{{review.showalltext}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-click="horizontalScope.showleft()" class="leftarrow glyphicon glyphicon-chevron-left"></div>
+    <div ng-click="horizontalScope.showright()" class="rightarrow glyphicon glyphicon-chevron-right"></div>
+</div>

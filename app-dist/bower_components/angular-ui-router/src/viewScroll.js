@@ -1,0 +1,1 @@
+function $ViewScrollProvider(){var useAnchorScroll=!1;this.useAnchorScroll=function(){useAnchorScroll=!0},this.$get=["$anchorScroll","$timeout",function($anchorScroll,$timeout){return useAnchorScroll?$anchorScroll:function($element){return $timeout(function(){$element[0].scrollIntoView()},0,!1)}}]}angular.module("ui.router.state").provider("$uiViewScroll",$ViewScrollProvider);

@@ -20,11 +20,22 @@ module.exports = function(config){
       {pattern: 'app/bower_components/angular-ui-router/release/angular-ui-router.js', included: false},
       {pattern: 'app/bower_components/jquery/dist/jquery.js', included: false},
       {pattern: 'app/bower_components/angular-animate/angular-animate.min.js', included: false},
+      {pattern: 'app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js', included: false},
+      {pattern: 'app/bower_components/perfect-scrollbar/js/perfect-scrollbar.js', included: false},
+      {pattern: 'app/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js', included: false},
+      {pattern: 'app/bower_components/jquery_appear/jquery.appear.js', included: false},
+      {pattern: 'app/bower_components/angularAMD/angularAMD.js', included: false},
+      {pattern: 'app/bower_components/angular-resource/angular-resource.js', included: false},
+      {pattern: 'app/bower_components/smt/dist/smt.js', included: false},
       
+      
+      {pattern: 'app/bower_components/**/*.js', included: false},
       {pattern: 'app/js/**/*.js', included: false},
-      {pattern: 'app/app.js', included: false},
+
+      {pattern: 'app/boot.js', included: false},
       // needs to be last http://karma-runner.github.io/0.12/plus/requirejs.html
-      'app/require-config.js'
+      
+      "app/require-config.js"
     ],
 
     autoWatch : true,
