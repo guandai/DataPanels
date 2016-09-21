@@ -4,7 +4,7 @@ require([
    // 'domReady', 
     'jquery',
     'angular',
-    'js/app',
+    'js/boot',
     "modenizr"
 ], function(  jquery, angular, app ) {
     

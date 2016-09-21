@@ -19,3 +19,8 @@ this is angular demo site including several implimentations .
 - angular-chart with  Chart.js 
 
 - grunt
+
+# How to use
+`npm install`
+`bower install`
+`grunt rjs --force to comple dist version`
