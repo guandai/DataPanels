@@ -78,4 +78,4 @@ require.config({
   baseUrl: this.__karma__ ? '/base/app' : ''
 });
 
-require(["boot"]);
+require(["app"]);

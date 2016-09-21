@@ -1,6 +1,5 @@
 'use strict';
 
-
 require([
    // 'domReady', 
     'jquery',
