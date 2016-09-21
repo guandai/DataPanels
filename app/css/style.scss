@@ -38,8 +38,7 @@ body {
         border: 1px solid white;
     }
     .widget-check-true {
-        box-shadow: 0px 0px 2px 2px white;
-        box-shadow: 0px 0px 5px 5px white;
+        box-shadow: 0px 0px 2px 2px red;
     }
     .widget-check-false {}
     div[ng-if="$storage.widgets"] {
